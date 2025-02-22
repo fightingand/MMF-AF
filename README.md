@@ -5,9 +5,7 @@
 <img src='./figs/figure2.jpg' width='600'  />
 
 # Dataset Preparation
-```
 Please download the official [KITTI 3D object detection]
-```
 The format of how the dataset is provided:
 ```
 MMF-AF
@@ -21,7 +19,7 @@ MMF-AF
 ├── pcdet
 ├── tools
 ```
-run following command to creat dataset infos:
+Run following command to creat dataset infos:
 ```
 python3 -m pcdet.datasets.kitti.kitti_dataset_mm create_kitti_infos tools/cfgs/dataset_configs/kitti_dataset.yaml
 ```
