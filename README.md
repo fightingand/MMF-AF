@@ -5,11 +5,12 @@
 <img src='./figs/figure2.jpg' width='600'  />
 
 # Dataset Preparation
+```
 Please download the official [KITTI 3D object detection](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) 
 dataset, [KITTI odometry dataset](https://www.cvlibs.net/datasets/kitti/eval_odometry.php) and organize the downloaded files as follows (the road planes could be downloaded 
 from [[road plane]](https://drive.google.com/file/d/1d5mq0RXRnvHPVeKx6Q612z0YRO1t2wAp/view?usp=sharing), 
 which are optional for data augmentation in the training):
-
+```
 ```
 MMF-AF
 ├── data
@@ -25,6 +26,7 @@ MMF-AF
 run following command to creat dataset infos:
 ```
 python3 -m pcdet.datasets.kitti.kitti_dataset_mm create_kitti_infos tools/cfgs/dataset_configs/kitti_dataset.yaml
+```
 # Installation
 
 This code is mainly based on [OpenPCDet](https://github.com/open-mmlab/OpenPCDet). 
@@ -36,9 +38,12 @@ All the codes are tested in the following environment:
 - CUDA 9.0 or higher (PyTorch 1.3+ needs CUDA 9.2+)
 - spconv v1.0 (commit 8da6f96) or spconv v1.2 or spconv v2.x
 
-# Setup
+#  Create conda environment and set up the base dependencies
 
 ```
+conda create --name MMF-AF python=3.9
+conda activate MMF-AF
+pip install torch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0 -f https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
 cd MMF-AF
 python setup.py develop
 ```
